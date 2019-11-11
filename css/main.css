@@ -1,0 +1,234 @@
+/* page setup */
+html {
+    font-family: 'Domine', serif;
+}
+
+p {
+    max-width: 50vw;
+}
+
+/* used major third scale from https://type-scale.com/ */
+h1 {font-size: 3.052em;}
+h2 {font-size: 2.441em;}
+h3 {font-size: 1.953em;}
+h4 {font-size: 1.563em;}
+h5 {font-size: 1.25em;}
+
+h1 {
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0;
+}
+
+h2 {
+    padding: 1rem 0;
+    margin: 0;
+    /* font-style: bold; */
+}
+
+h3 {
+    padding: 1rem 0;
+    margin: 0;
+    /* font-style: italic; */
+}
+
+h4 {
+    padding: 1rem 0;
+    margin: 0;
+}
+
+
+
+
+/* header */
+.box-head {
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    border-bottom: solid 1px black;
+}
+
+.heading {
+    padding: 1rem 5rem;
+}
+
+.header-h1 {
+    padding: 0;
+    margin: 0;
+}
+
+.brand-cluster {
+    margin: 1rem 0;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    background: lightblue;
+    width: fit-content;
+    padding: 1rem 0;
+    border-radius: 5px;
+    margin: 0;
+}
+
+.nav-link{
+    color: black;
+    padding: 16px 32px;
+    text-decoration: none;
+    
+    transition: 0.5s;
+} 
+
+.nav-link:hover {
+    color: lightcoral;
+
+    transition: 0.5s;
+}
+
+
+
+
+/* main content */
+.box {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box-main {
+    max-height: 25rem;
+    border: 1px solid black;
+    border-radius: 3px;
+    
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+.card {
+    display: flex;
+    box-sizing: border-box;
+    justify-content: space-around;
+}
+
+.card-link {
+    position: relative;
+    background: rgb(189, 234, 255);
+    width: 100%;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.card-link:focus{
+    background: rgb(32, 48, 63);
+    /* cursor: pointer; */
+    transition: 0.5s;
+}
+
+.card-link:hover {
+    background: rgb(231, 243, 255);
+    /* cursor: pointer; */
+    transition: 0.5s;
+}
+
+.card-link:visited {
+    color: black;
+}
+
+
+
+
+
+
+.food-type {
+    padding-top: 0;
+}
+
+.vendor-name {
+    padding-bottom: 0.2rem;
+}
+
+#forwards {
+    right: 0;
+}
+
+#backwards {
+    left: 0;
+}
+
+/* forms */
+.form-input {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+    width: 20rem;
+}
+
+.card-link-submit {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.card-link-submit:hover {
+    cursor: pointer;
+}
+
+.page_icon, #page_icon_holder {
+    display: inline;
+}
+
+.page_icon {
+    max-width: 20px;
+}
+
+.page_icon:hover {
+    cursor: pointer;
+}
+
+/* filter */
+.char-select {
+    /* position: absolute;
+    display: block;
+    padding: 1rem;
+    border: 2px solid black;
+    top: 20rem;
+    right: 0;
+    width: 20rem; */
+}
+/* .filter-item {
+    display: block;
+}  */
+
+/* helper */
+.spacer {
+    padding-top: 3rem;
+}
+
+.centered {
+    width: fit-content;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/* grid stuff */
+.grid-container {
+    display: grid;
+    margin: 1rem;
+    grid-template-columns: 1fr 4fr 2fr 1fr;
+    grid-auto-rows: 1fr;
+}
+
+.col-2of3 {
+    padding: 1rem;
+    margin: 1rem;
+    grid-column: 2;
+    box-sizing: border-box;
+}
+
+.col-1of3 {
+    padding: 1rem;
+    margin: 1rem;
+    grid-column: 3;
+    max-height: 20rem;
+    box-sizing: border-box;
+}
