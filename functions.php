@@ -35,6 +35,13 @@
         performQuery($connection, $result, $query);   //now perform the query
     }
 
+    function getReviews(&$connection, &$reviewResult) {
+        $query = "SELECT reviewed.username, reviews.text, reviews.stars, reviews.date FROM reviews INNER JOIN reviewed ON reviews.rid = reviewed.rid INNER JOIN hasreview ON reviewed.rid = hasreview.rid WHERE hasreview.id = ".$_GET["id"].";";
+        // echo $query;
+
+        performQuery($connection, $reviewResult, $query);   //now perform the query
+    }
+
     //function to select the right listing for profile.php
     function getUser(&$connection, &$result) {
         $query = "SELECT * FROM users WHERE username=\"".$_SESSION["set_user"]."\";";   //primary key so only returns one user

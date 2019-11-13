@@ -58,34 +58,7 @@
 
 
 <!-- functions -->
-<?php
-    //function to open connection to database
-    function openConnection(&$connection) {
-        //open the connection to the database
-        $connection = mysqli_connect("localhost", "root", "", "gabriele_dalcengio"); 
-
-        // Test if connection succeeded 
-        if(mysqli_connect_errno()) { 
-            // if connection failed, skip the rest of PHP code, and print an error 
-            die("Database connection failed: " . 
-                mysqli_connect_error() . 
-                " (" . mysqli_connect_errno() . ")" 
-                ); 
-        } 
-    }
-    
-    
-    //function to perform the query to the table
-    function performQuery(&$connection, &$result, $queryToPerform) {
-        //Perform database query
-        $result = mysqli_query($connection, $queryToPerform);
-        
-        //Test if there was a query error 
-        if (!$result) { 
-            die("Database query failed."); 
-        } 
-    }
-    
+<?php    
     
     //function to register user calling the function to perform query
     function registerUser(&$connection, &$result, $username, $password, $fullname, $email, $e_pref, $f_pref) {
@@ -95,15 +68,6 @@
         // echo $insertQuery;   for debugging and figuring out what insert queries require
         
         performQuery($connection, $result, $insertQuery);   //now perform the query
-    }
-    
-    
-    //function to close the connection to the database
-    function closeConnection(&$connection, &$result) {
-        //Release returned data 
-        // mysqli_free_result($result);    don't need to free the result as there is no object to free from an insert query
-        //Close database connection 
-        mysqli_close($connection); 
     }
     
 ?>

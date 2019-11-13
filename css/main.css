@@ -161,6 +161,14 @@ nav {
     left: 0;
 }
 
+/* reviews */
+.review-container {
+    margin-top: 2rem;
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
 /* forms */
 .form-input {
     padding: 1rem 0;

@@ -40,15 +40,18 @@
             // echo $name;
             $connection;
             $result;
+            $reviewResult;
 
             openConnection($connection);
             getListing($connection, $result);
             $row = mysqli_fetch_array($result);
+            getReviews($connection, $reviewResult);
+            
 
 
             // title
             echo "<h1>".$row["name"]."</h1>";
-            echo "<h3>".$row["origin"]." | ".$row["type"]."</h3>";
+            echo "<h2>".$row["origin"]." | ".$row["type"]."</h2>";
             //stars
             echo "<div>";
                 for($i=0; $i<5; $i++){
@@ -60,8 +63,42 @@
                 }
             echo "</div>";
 
-            echo "<h4>".$row["location"]." | ".$row["address"]."</h4>";
+            echo "<h3>".$row["location"]." | ".$row["address"]."</h3>";
             echo "<p>".$row["description"]."</p>";
+
+            echo "<div class=\"review-container\">";
+            echo "<h2>reviews</h2>";
+
+            while ($review = mysqli_fetch_array($reviewResult)) {
+                echo "<h4>".$review["username"].":</h4>";
+                echo "<p>".$review["text"]."</p>";
+            }
+            echo "</div>";
+
+            $id = $_GET["id"];
+
+            if (isset($_SESSION["set_user"])) {
+                echo "<form action=\"addedReview.php?id=".$id."\" method=\"POST\">";
+                echo "<h2>add a review</h2>";
+                echo "<div class=\"form-input\">";
+                    // text (reviewtext)
+                echo "<input type=\"text\" name=\"reviewText\" required>";
+                echo "</div>";
+                echo "<div class=\"form-input\">";
+                    // rating (stars)
+                echo "<label for=\"stars\">rating/5:</label>";
+                echo "<select name=\"stars\">";
+                echo "    <option value=\"1\">1</option>";
+                echo "    <option value=\"2\">2</option>";
+                echo "    <option value=\"3\">3</option>";
+                echo "    <option value=\"4\">4</option>";
+                echo "    <option value=\"5\">5</option>";
+                echo "</select>";
+                echo "</div>";
+                    // submit button
+                echo "<input type=\"submit\">";
+                echo "</form>";
+            }
         ?>
 
         <?php
