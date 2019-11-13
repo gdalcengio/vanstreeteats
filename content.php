@@ -50,7 +50,7 @@
             echo "<h1>".$row["name"]."</h1>";
             echo "<h3>".$row["origin"]." | ".$row["type"]."</h3>";
             //stars
-            echo "<div class=\"star-container\">";
+            echo "<div>";
                 for($i=0; $i<5; $i++){
                     if ($i<$row["rating"]) {
                         echo "<img src=\"img/star.png\" alt=\"filled star\">";

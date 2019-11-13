@@ -46,13 +46,19 @@
     //prints out each row of information into a list in listings.php
     function printRows(&$result) {
         while ($row = mysqli_fetch_array($result)) {
-            echo "<a href=\"content.php?id=".$row['id']."\" class=\"card-link\">".$row['id'];
-                echo "<article class=\"box card\">";
-                    echo "<h2 class=\"vendor-name\">".$row['name']."</h2>";
-                                // <h3 class="food-type">_____vendor type _____</h3>
-                    //         <div class="card-info-right">
+            echo "<article class=\"box card\">";
+                echo "<a href=\"content.php?id=".$row['id']."\" class=\"card-link\">".$row['id'];
+                    echo "<p class=\"vendor-name\">".$row['name']."</p>";
                     echo "<p class=\"location\">".$row['location']."</p>";
-                //         </div>
+                    echo "<div class=\"star-container\">";
+                        for($i=0; $i<5; $i++){
+                            if ($i<$row["rating"]) {
+                                echo "<img src=\"img/star.png\" alt=\"filled star\">";
+                            } else {
+                                echo "<img src=\"img/star0.png\" alt=\"empty star\">";
+                            }
+                        }
+                    echo "</div>";
                 echo "</article>";
             echo "</a>";
         }

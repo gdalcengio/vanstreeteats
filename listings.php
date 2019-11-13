@@ -27,15 +27,13 @@
     </header>
 
     <!--main content section-->
-    <div class="spacer"></div>
     <div class="grid-container">
-        <section class="box box-main col-2of3">
             <!-- <div class="box centered">
                 <img src="img/prev.svg" alt="icon to go back" class="page_icon" id="backwards">
                 <div id="page_icon_holder"><a href="#">1</a></div>
                 <img src="img/next.svg" alt="icon to go next" class="page_icon" id="forwards">
             </div> -->
-    
+        <section class="box box-main col-2of3">
 <?php
     $connection;
     $result;
@@ -45,52 +43,42 @@
     printRows($result);
     closeConnection($connection, $result);
 ?>
-        <!-- <a href="content.php?id=______" class="card-link">
-            <article class="card box" id="_____rowid____">
-                <div class="card-info-left">
-                    <h2 class="vendor-name">_____vendor name_____</h2>
-                    <h3 class="food-type">_____vendor type _____</h3>
-                </div>
-                <div class="card-info-right">
-                    <p class="location">____vendor location_____</p>
-                </div>
-            </article>
-        </a> -->
 
         </section>
 
     <!-- filter section -->
-    <aside class="box col-1of3">
-        <h2>filters</h2>
-        <h3>type</h3>
+    <aside class="box col-filter1">
+        <h3 class="block">type</h3>
         <section class="categories">
             <form action="#" method="GET">
-                <input class="filter-item" name="" type="checkbox" value="all"><label> show all types </label>
-                <input class="filter-item" name="" type="checkbox" value="hot dogs"><label> hot dogs </label>
-                <input class="filter-item" name="" type="checkbox" value="drinks"><label> drinks </label>
-                <input class="filter-item" name="" type="checkbox" value="sandwiches"><label> sandwiches </label>
-                <input class="filter-item" name="" type="checkbox" value="dim sum"><label> dim sum </label>
-                <input class="filter-item" name="" type="checkbox" value="meats"><label> meats </label>
-                <input class="filter-item" name="" type="checkbox" value="seafood"><label> seafood </label>
-                <input class="filter-item" name="" type="checkbox" value="crepes"><label> crepes </label>
-                <input class="filter-item" name="" type="checkbox" value="potato-based"><label> potato-based dishes </label>
-                <input class="filter-item" name="" type="checkbox" value="soups"><label> soups </label>
-                <input class="filter-item" name="" type="checkbox" value="grilled cheese"><label> grilled cheese </label>
-                <input class="filter-item" name="" type="checkbox" value="chicken"><label> chicken </label>
-                <input class="filter-item" name="" type="checkbox" value="burgers"><label> burgers </label>
-                <input class="filter-item" name="" type="checkbox" value="fries"><label> fries </label>
-                <input class="filter-item" name="" type="checkbox" value="dessert"><label> dessert </label>
+                <label class="filter-item"><input type="checkbox" value="all"> show all types </label>
+                <label class="filter-item"><input type="checkbox" value="hot dogs"> hot dogs </label>
+                <label class="filter-item"><input type="checkbox" value="drinks"> drinks </label>
+                <label class="filter-item"><input type="checkbox" value="sandwiches"> sandwiches </label>
+                <label class="filter-item"><input type="checkbox" value="dim sum"> dim sum </label>
+                <label class="filter-item"><input type="checkbox" value="meats"> meats </label>
+                <label class="filter-item"><input type="checkbox" value="seafood"> seafood </label>
+                <label class="filter-item"><input type="checkbox" value="crepes"> crepes </label>
+                <label class="filter-item"><input type="checkbox" value="potato-based"> potato-based dishes </label>
+                <label class="filter-item"><input type="checkbox" value="soups"> soups </label>
+                <label class="filter-item"><input type="checkbox" value="grilled cheese"> grilled cheese </label>
+                <label class="filter-item"><input type="checkbox" value="chicken"> chicken </label>
+                <label class="filter-item"><input type="checkbox" value="burgers"> burgers </label>
+                <label class="filter-item"><input type="checkbox" value="fries"> fries </label>
+                <label class="filter-item"><input type="checkbox" value="dessert"> dessert </label>
             </form>
         </section>
-        <h3>region</h3>
-        <section class="filter">
+    </aside>
+    <aside class="box col-filter2">
+        <h3 class="block">region</h3>
+        <section class="region">
             <form action="#" method="GET">
-                <input class="filter-item" name="" type="checkbox" value="Asian"> <label for="">asian</label>
-                <input class="filter-item" name="" type="checkbox" value="Middle East"><label for="">middle eastern</label>
-                <input class="filter-item" name="" type="checkbox" value="Western"><label for="">western</label>
-                <input class="filter-item" name="" type="checkbox" value="South America"><label for="">south america</label>
-                <input class="filter-item" name="" type="checkbox" value="European"><label for="">european</label>
-                <input class="filter-item" name="" type="checkbox" value="African">          <label for="">african</label>    
+                <label class="filter-item"><input type="checkbox" value="Asian"> asian</label>
+                <label class="filter-item"><input type="checkbox" value="Middle East"> middle eastern</label>
+                <label class="filter-item"><input type="checkbox" value="Western"> western</label>
+                <label class="filter-item"><input type="checkbox" value="South America"> south american</label>
+                <label class="filter-item"><input type="checkbox" value="European"> european</label>
+                <label class="filter-item"><input type="checkbox" value="African"> african</label>    
             </form>
         </section>
     </aside>

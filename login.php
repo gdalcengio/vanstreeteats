@@ -100,7 +100,7 @@ require_once("functions.php");
     }
 
 
-    //function to register user calling the function to perform query
+    //function to check registered user calling the function to perform query
     function userRegistered(&$connection, &$result, $username, $password) {
         $pass = sha1($password);
         $query = "SELECT * FROM users WHERE username = '".$username."' AND pass = '".$pass."';";
